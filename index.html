@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Word Count — Free Word &amp; Character Counter, Reading Time | S3eidat Tools</title>
+<meta name="description" content="Live word, character, sentence and paragraph counts, reading and speaking time, and top keywords with density. Works with Arabic. Free, private, nothing uploaded.">
+<meta property="og:title" content="Word Count — free, private word counter">
+<meta property="og:description" content="Words, characters, reading time and keyword density, in English and Arabic. Runs 100% in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="word-count">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Word Count</h1>
+    <p>Type or paste text and see words, characters, reading time and keyword density update as you go. English and Arabic. Your text stays on this device.</p>
+  </section>
+
+  <section class="card">
+    <div class="stats wc-stats" id="stats" aria-live="polite"></div>
+  </section>
+
+  <div class="wc-grid mt">
+    <section class="card">
+      <div class="row between">
+        <h2>Your text</h2>
+        <div class="row">
+          <label class="btn ghost small" id="open">Open .txt<input type="file" accept=".txt,.md,text/plain" hidden></label>
+          <button class="btn ghost small" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy</button>
+          <button class="btn ghost small" id="clear"><svg class="i"><use href="#i-trash"/></svg>Clear</button>
+        </div>
+      </div>
+      <label for="input" class="faint">Text (autosaved on this device)</label>
+      <textarea class="textarea prose wc-input mt" id="input" dir="auto" placeholder="Start typing or paste your text here…"></textarea>
+      <div class="row mt faint" id="more"></div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Top keywords</h2>
+        <label class="check"><input type="checkbox" id="stop"> Include stop words</label>
+      </div>
+      <div id="kw"></div>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
